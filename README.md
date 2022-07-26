@@ -4,7 +4,9 @@
 - check if node in installed and set the correct version 14 or above (nvm install [version.number])
 - npx create-react-app . (execute the command create app in current folder)
 - get a coffee ! seriously !
-
+- personalize the App.js cleaning the code and just return null.
+- you can delete test file, css files, logos files, and favicon file.
+- index.js remove service worker code, css, comments.
 
 # Getting Started with Create React App
 
