@@ -7,6 +7,8 @@
 - personalize the App.js cleaning the code and just return null.
 - you can delete test file, css files, logos files, and favicon file.
 - index.js remove service worker code, css, comments.
+- delete icons inside manifest.json file.
+TIP: install ES7 React/Redux/GraphQL/React-Native snippets. and use rfc to create a new component.
 
 # Getting Started with Create React App
 
