@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import TodoList from "./TodoList";
-import uuidv4 from "uuid/v4";
+import { v4 as uuidv4 } from 'uuid';
+// import uuidv4 from "uuid/v4"; ERROR
 
 function App() {
   // const sample = [{ id: 1, text: "Learn React", completed: false },{ id: 2, text: "Learn Vue", completed: true },{ id: 3, text: "Learn Angular", completed: false }];
