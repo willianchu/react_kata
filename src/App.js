@@ -1,8 +1,9 @@
 import React, { useState, useRef } from "react";
 import TodoList from "./TodoList";
+import uuidv4 from "uuid/v4";
 
 function App() {
-  const sample = [{ id: 1, text: "Learn React", completed: false },{ id: 2, text: "Learn Vue", completed: true },{ id: 3, text: "Learn Angular", completed: false }];
+  // const sample = [{ id: 1, text: "Learn React", completed: false },{ id: 2, text: "Learn Vue", completed: true },{ id: 3, text: "Learn Angular", completed: false }];
 
   const [todos, setTodos] = useState([]);
   const todoNameRef = useRef();
@@ -10,7 +11,7 @@ function App() {
   function handleAddTodo(e) {
     const text = todoNameRef.current.value;
     if (text === "") return
-    setTodos([...todos, { id: Date.now(), text, completed: false }]);
+    setTodos([...todos, { id: uuidv4(), text, completed: false }]);
     // setTodos(prevTodos => {
     //   return [...prevTodos, { id: Date.now(), text, completed: false }]
     // });

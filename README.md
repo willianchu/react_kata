@@ -8,6 +8,13 @@
 - you can delete test file, css files, logos files, and favicon file.
 - index.js remove service worker code, css, comments.
 - delete icons inside manifest.json file.
+
+library to unique ID - UUID
+npm install uuid
+
+[]: # Language: markdown
+[]: # Path: README.md
+
 TIP: install ES7 React/Redux/GraphQL/React-Native snippets. and use rfc to create a new component.
 
 # Getting Started with Create React App
