@@ -1,3 +1,11 @@
+# react_kata
+
+- create a folder with no capital letters and no white spaces.
+- check if node in installed and set the correct version 14 or above (nvm install [version.number])
+- npx create-react-app . (execute the command create app in current folder)
+- get a coffee ! seriously !
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +76,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
