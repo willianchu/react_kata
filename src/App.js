@@ -1,13 +1,28 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import TodoList from "./TodoList";
 import { v4 as uuidv4 } from 'uuid';
 // import uuidv4 from "uuid/v4"; ERROR
+
+const LOCAL_STORAGE_KEY = "todoApp.todos";
 
 function App() {
   // const sample = [{ id: 1, text: "Learn React", completed: false },{ id: 2, text: "Learn Vue", completed: true },{ id: 3, text: "Learn Angular", completed: false }];
 
   const [todos, setTodos] = useState([]);
   const todoNameRef = useRef();
+
+  useEffect(() => { // load todos from local storage
+    const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    console.log(LOCAL_STORAGE_KEY);
+    if (storedTodos) setTodos(storedTodos);
+  }, []);
+
+  useEffect(() => { // saving todos to local storage
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
+    const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    console.log(storedTodos);
+
+  }, [todos]);
 
   function handleAddTodo(e) {
     const text = todoNameRef.current.value;
