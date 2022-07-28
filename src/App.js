@@ -12,17 +12,13 @@ function App() {
   const todoNameRef = useRef();
 
   useEffect(() => { // load todos from local storage
-    const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    console.log(LOCAL_STORAGE_KEY);
-    if (storedTodos) setTodos(storedTodos);
-  }, []);
+    const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+    if (storedTodos.length !== 0) setTodos(storedTodos) // correct check for empty array
+  }, [])
 
-  useEffect(() => { // saving todos to local storage
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
-    const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    console.log(storedTodos);
-
-  }, [todos]);
+  useEffect(() => { // save todos to local storage
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
+  }, [todos])
 
   function handleAddTodo(e) {
     const text = todoNameRef.current.value;
