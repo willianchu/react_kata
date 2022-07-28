@@ -20,6 +20,12 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
   }, [todos])
 
+  function toggleTodo(id) {
+    const newTodos = [...todos];
+    const todo = newTodos.find(t => t.id === id);
+    todo.completed = !todo.completed;
+  }
+
   function handleAddTodo(e) {
     const text = todoNameRef.current.value;
     if (text === "") return
@@ -32,7 +38,7 @@ function App() {
 
   return (
     <>
-      <TodoList todos={todos} />
+      <TodoList todos={todos} toggleTodo={toggleTodo} />
       <input ref={ todoNameRef } type="text" />
       <button onClick={ handleAddTodo }>Add</button>
       <button>Clear Completed</button>
