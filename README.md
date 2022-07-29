@@ -9,6 +9,18 @@
 - index.js remove service worker code, css, comments.
 - delete icons inside manifest.json file.
 
+- create an app TODO list
+- hooks to manage the state of the app
+- use the useState hook to store the todo list in a local variable.
+- use the useEffect hook to preserve the state of the todo list after a reload of the page.
+- use Reference to manage the state to reach an element of the DOM.
+
+- use JASON.stringify to convert the todo list to a JSON string and store in local variable.
+- use JASON.parse to convert the JSON string to a todo list object.
+
+
+
+
 library to unique ID - UUID
 npm install uuid
 
