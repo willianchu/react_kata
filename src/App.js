@@ -13,7 +13,9 @@ function App() {
 
   useEffect(() => { // load todos from local storage
     const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
-    if (storedTodos.length !== 0) setTodos(storedTodos) // correct check for empty array
+    if (storedTodos !== null && storedTodos.length > 0) {
+      setTodos(storedTodos) // correct check for empty array
+    }
   }, [])
 
   useEffect(() => { // save todos to local storage
@@ -23,7 +25,8 @@ function App() {
   function toggleTodo(id) {
     const newTodos = [...todos];
     const todo = newTodos.find(t => t.id === id);
-    todo.completed = !todo.completed;
+    todo.completed = !todo.completed; // toggle completed - using newTodos object reference
+    setTodos(newTodos);
   }
 
   function handleAddTodo(e) {
@@ -42,7 +45,7 @@ function App() {
       <input ref={ todoNameRef } type="text" />
       <button onClick={ handleAddTodo }>Add</button>
       <button>Clear Completed</button>
-      <div>{todos.length} left to do</div>
+      <div>{todos.filter(todo => !todo.completed).length} left to do !!</div>
     </>
   );
 }
